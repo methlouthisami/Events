@@ -6,9 +6,9 @@ const fs = require("fs");
 module.exports = {
   addEvent: async (req, res) => {
     const userId = mongoose.Types.ObjectId(req.body.userId);
-      const image = `/images/${filename}`;
+     // const image = `/images/${filename}`;
     const {
-      body: { title, date, description, catégorie },
+      body: { title, date, description, catégorie,image },
       
     } = req;  
   
