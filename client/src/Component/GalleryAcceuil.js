@@ -10,17 +10,17 @@ const GalleryAcceuil = () => {
       <div>
         <h1 id="history">Monuments Culturels</h1>
       </div>
-      <div className="container mt-5 mb-5 ">
+      <div className="container mt-5 mb-5 GalleryGroupe">
         <div class="row mt-4">
-          <div class="col-lg-6 col-md-3 Gallery">
+          <div class="col-lg-6 col-md-6 Gallery">
             <img
               src={Medina}
               alt="Lightbox image 2"
-              class="w-100 medina"
+              className="w-100 medina"
               style={{ height: "280px" }}
             />
           </div>
-          <div class="col-lg-6 mt-2 ">
+          <div class="col-lg-6 col-md-6 mt-2 ">
             <p className="text-justify" style={{ fontSize: "1.2rem" }}>
               <h2 className="city">La Cité de la Culture</h2> est un complexe
               culturel tunisien de neuf hectares situé en plein centre de la

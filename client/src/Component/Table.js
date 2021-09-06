@@ -49,11 +49,12 @@ export default function Table() {
   const Addtolist = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("image", image, image.name);
+   // formData.append("image", image, image.name);
     formData.append("title", title);
     formData.append("description", description);
     formData.append("date", date);
     formData.append("catégorie", catégorie);
+    formData.append("image", image);
     const { data } = await fetchAddEvent(formData).catch((e) =>
       console.log("Error at ImageUpload", e)
     );
@@ -146,7 +147,7 @@ export default function Table() {
                     {" "}
                     <img
                       className="playerProfilePic_home_tile"
-                      src={ImgData}
+                      src={image}
                       style={{ width: "80px" }}
                       alt=".."
                     />
@@ -189,7 +190,7 @@ export default function Table() {
                       <img
                         className="playerProfilePic_home_tile"
                         src={el.image}
-                        style={{ width: "130px" }}
+                        style={{ width: "150px",height:"150px"}}
                         alt=".."
                       />
                     </td>
@@ -259,13 +260,11 @@ export default function Table() {
                 <div className="form-group">
                   <label>Image</label>
                   <input
-                    type="file"
+                    type="text"
                     style={{ width: "210px" }}
                     placeholder="image-file"
-                    name='file'
-                    value={image.name}
-                    accept=".jpg"
-                    onChange={onChangePicture}
+                    name={image}
+                    onChange={(e) => setImage(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
