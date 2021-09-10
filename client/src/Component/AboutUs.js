@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const Wrap = styled.div`
   background: #272727;
-  color: #fff;
+  color: #b78c33;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,15 +43,15 @@ const Wrap = styled.div`
 
 const Dropdown = styled.div`
   background: #1c1c1c;
-  color: #00ffb9;
+  color: #b78c33;
   width: 100%;
   height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #00ffb9;
-  border-top: 1px solid #00ffb9;
+  border-bottom: 1px solid #b78c33;
+  border-top: 1px solid #b78c33;
 
   p {
     font-size: 2rem;
@@ -72,8 +72,8 @@ const AboutUs = () => {
 
   return (
     <div>
-      <Navv/>
-      <IconContext.Provider value={{ color: "#00FFB9", size: "25px" }}>
+      <Navv />
+      <IconContext.Provider value={{ color: "#b78c33", size: "25px" }}>
         <AccordionSection>
           <Container>
             {Data.map((item, index) => {

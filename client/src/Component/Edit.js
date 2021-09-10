@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Modal, Button } from "react-bootstrap";
-export const Edit = ({el,_id}) => {
+import { updateEvent } from "../redux/actions/eventActions";
+export const Edit = ({ el, _id }) => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -11,36 +13,27 @@ export const Edit = ({el,_id}) => {
     title: el.title,
     description: el.description,
     date: el.date,
-    image: el.image,
+    
     catégorie: el.catégorie,
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
     SetUpdate({ ...update, [name]: value });
-    console.log("aaaaaaaaaaaa", name)
   };
- {/* const EditEvent = () => {
+  const EditEvent = () => {
     dispatch(
       updateEvent(
         _id,
         update.title,
         update.description,
         update.date,
-        update.image,
+       
         update.catégorie
       )
-    
-    );}
-  console.log(
-    _id,
-    update.title,
-    update.description,
-    update.date,
-    update.image,
-    update.catégorie
-  );
+    );
     setShow(false);
-  ;*/}
+  };
+
   return (
     <div>
       <a href="#editEmployeeModal" className="edit" data-toggle="modal">
@@ -69,7 +62,7 @@ export const Edit = ({el,_id}) => {
               className="mb-2"
               required
             />
-
+        
             <input
               type="text"
               name="description"
@@ -90,19 +83,19 @@ export const Edit = ({el,_id}) => {
               style={{ width: "210px" }}
               required
             />
-       
+
             <input
               type="catégorie"
               name="catégorie"
               defaultValue={el.catégorie}
               onChange={handleChange}
-              placeholder="date"
+              placeholder="Catégorie"
               className="mb-2"
               style={{ width: "210px" }}
               required
             />
 
-            <Button variant="primary">
+            <Button variant="primary" onClick={EditEvent}>
               Save Changes
             </Button>
           </form>

@@ -1,0 +1,60 @@
+
+
+.IImage img{
+  margin-top:-700px;
+  position:absolute;
+  padding:0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 2s;
+}
+
+.img-1 {
+  clip-path: polygon(0% 100%, 0 0, 100% 0, 100% 0);
+}
+
+.img-1:hover {
+  clip-path: polygon(0% 100%, 0 0, 100% 0, 100% 100%);
+}
+
+.img-1:hover + .img-2 {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 100% 100%);
+}
+
+.img-2 {
+  clip-path: polygon(0% 100%, 100% 0, 100% 0%, 100% 100%);
+}
+
+.img-2:hover {
+  clip-path: polygon(0% 100%, 0 0, 100% 0, 100% 100%);
+}
+@media(max-width:1024px){
+  .IImage{
+    margin-top:700px;
+  }
+}
+@media(max-width:768px){
+  .IImage img{
+    margin-top:-670px;
+    width:100%;
+}
+}
+@media(max-width:425px){
+   .IImage img{
+    margin-top:-620px;
+    width:105%;
+    margin-left:0px;
+    height:300px;
+  }
+}
+@media(max-width:375px){
+  .IImage img{
+    margin-top: 0;
+    width:100%;
+    margin-left:0px;
+    height:200px;
+  }
+
+}

@@ -52,3 +52,15 @@ color: #999; }
 footer.nb-footer .copyright p {
 margin: 0;
 padding: 0; }
+.list-unstyled {
+    margin-top: 25px;
+    margin-left:-35px;
+    list-style: none;
+
+}
+@media (max-width:425px){
+ footer.nb-footer{
+     margin-top:1700%;
+     width:105%
+    }
+}

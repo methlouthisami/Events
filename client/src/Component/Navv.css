@@ -11,11 +11,11 @@
   perspective: 1000px;
   perspective-origin: 50% 50%;
   border-bottom: 6px solid #b78c33;
+
+  
 }
 
-.leftNav {
-  margin-left: 500px;
-}
+
 @keyframes scroll {
   100% {
     background-position: 0px -3000px;

@@ -6,12 +6,10 @@ import {
   addEvent,
   deleteEvent,
 } from "../redux/actions/eventActions";
+
 import { fetchAddEvent } from "../request/REQUEST";
 import "./Table.css";
 import { Edit } from "./Edit";
-
-
-
 
 export default function Table() {
   const dispatch = useDispatch();
@@ -19,8 +17,9 @@ export default function Table() {
   const [description, setDiscription] = useState("");
   const [date, setDate] = useState("");
   const [catégorie, setCatégorie] = useState("");
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState([{ image: "" }]);
   const [ImgData, setImgData] = useState([]);
+
   //get all events
   const eventData = useSelector((state) => state.eventStore.event);
   useEffect(() => {
@@ -34,30 +33,32 @@ export default function Table() {
   //ADD
   const onChangePicture = (e) => {
     e.preventDefault();
-    
+
     if (e.target.files[0]) {
       console.log("picture: ", e.target.files);
-      setImage( e.target.files[0]);
+      setImage(e.target.files[0]);
       const reader = new FileReader();
       reader.addEventListener("load", () => {
         setImgData(reader.result);
       });
       reader.readAsDataURL(e.target.files[0]);
     }
+    console.log("imageeeee", image);
   };
+
   // add to list
   const Addtolist = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-   // formData.append("image", image, image.name);
+    formData.append("image", image);
     formData.append("title", title);
     formData.append("description", description);
     formData.append("date", date);
     formData.append("catégorie", catégorie);
-    formData.append("image", image);
     const { data } = await fetchAddEvent(formData).catch((e) =>
       console.log("Error at ImageUpload", e)
     );
+    console.log("imageeeee", image);
 
     if (data && data._id) dispatch(addEvent(data));
 
@@ -79,9 +80,10 @@ export default function Table() {
     dispatch(deleteEvent(id));
     console.log("ddddddd", deleteEvent);
   };
+  //UPDATE EVENT
 
   return (
-    <div>
+    <div className="Table">
       <div className="container-xl mt-5">
         <div className="table-responsive">
           <div className="table-wrapper">
@@ -148,7 +150,7 @@ export default function Table() {
                     <img
                       className="playerProfilePic_home_tile"
                       src={image}
-                      style={{ width: "80px" }}
+                      style={{ width: "100px" }}
                       alt=".."
                     />
                   </td>
@@ -190,7 +192,7 @@ export default function Table() {
                       <img
                         className="playerProfilePic_home_tile"
                         src={el.image}
-                        style={{ width: "150px",height:"150px"}}
+                        style={{ width: "150px", height: "150px" }}
                         alt=".."
                       />
                     </td>
@@ -263,8 +265,8 @@ export default function Table() {
                     type="text"
                     style={{ width: "210px" }}
                     placeholder="image-file"
-                    name={image}
-                    onChange={(e) => setImage(e.target.value)}
+                    name="image"
+                    onChange={(e)=>setImage(e.target.value)}
                   />
                 </div>
                 <div className="form-group">

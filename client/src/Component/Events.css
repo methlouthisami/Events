@@ -3,7 +3,7 @@
   height: 500px;
 }
 .one {
-  margin-left: 80px;
+  margin-left: 130px;
   padding-top: 50px;
 }
 .one h1 {
@@ -159,57 +159,71 @@ ul li a {
     margin-right: 0;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 766px) and (min-width:550px) {
+  .one h1{
+    margin-right:500px;
+  }
   .stick {
-    margin-left: -15px;
+    margin-left:-25px;
   }
-  .buttons {
-    margin-left: -90px;
+  .card-img-event{
+    height: 100px;
   }
+
   .acceuil-cward {
     margin-left: 10px;
+  }
+  .cward{
+    margin-left:20px
   }
   .events-card {
     width: 200px;
   }
   .buttons {
-    margin-left: 50px;
+    margin-left:-50px;
   }
   .cward {
     margin-left: -20px;
   }
 
   .card-img-event {
-    width: 300px;
     height: 130px;
   }
 }
 
 @media only screen and (max-width: 461px) {
-  
-  .acceuil-cward2{
-    display: block;
+  .one h1{
+    margin-right:-25px;
+    font-size:44px
   }
+  .acceuil-cward2{
+    display:block;
+  }
+ 
+ 
   
   .cward {
     width:550px;
-    margin-left: 0px;
+    margin-left: -165px;
   }
   .card-img-event {
-    width: 150px;
-    height: 200px;
+    width:100%;
+    height: 250px;
   }
   .stick {
     margin-top:50px;
 height:200px;
   width:300px;
-  margin-left:50px;
+  margin-left:-30px;
   }
   .buttons {
     margin-top: 30px;
     margin-bottom: 20px;
-    margin-left: -20px;
+    margin-left: -35px;
   }
+ .footer{
+   margin-top:-700px;
+ }
 }
 @media only screen and (max-width: 380px) {
   .cward {

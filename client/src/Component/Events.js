@@ -36,7 +36,7 @@ export default function Event() {
       <div className="acceuil-cward container">
         <div className=" acceuil-cward2">
           <div
-            className="col-md-7  col-sm-12
+            className="col-md-7
            cward"
           >
             <div class="card mb-3">
@@ -174,36 +174,35 @@ export default function Event() {
                 </li>
               </lu>
             </div>
-            {eventData.map((el) => (
-              <div
-                className=" events-card"
-                accordion-button
-                style={{ maxWidth: "450px", height: "200px" }}
-              >
-                <div class="card mb-3 ">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img
-                        src={el.image}
-                        className="card-img-event"
-                        alt="..."
-                      />
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">{el.title}</h5>
-                        <p class="card-text">{el.description}</p>
-                        <p class="card-text">
-                          <small class="text-muted">
-                            Last updated 3 mins ago
-                          </small>
-                        </p>
+            {eventData
+              .filter((el) => el.catégorie === "CINIMA")
+
+              .map((el) => (
+                <div className=" events-card" accordion-button>
+                  <div class="card mb-3 ">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img
+                          src={el.image}
+                          className="card-img-event"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{el.title}</h5>
+                          <p class="card-text">{el.description}</p>
+                          <p class="card-text">
+                            <small class="text-muted">
+                              Last updated 3 mins ago
+                            </small>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
             <hr />
           </div>
         </div>

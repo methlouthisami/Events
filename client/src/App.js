@@ -24,6 +24,7 @@ export default function App() {
               <Route path="/Events" component={Events} />
               <Route path="/favorit" component={Favori} />
               <Route path="/Table" component={Table} />
+          
             </Switch>
           </div>
         </Router>

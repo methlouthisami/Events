@@ -13,7 +13,8 @@ export default function Navv() {
                 <h4>E-events</h4>
               </Link>
             </Navbar.Brand>
-            <Navbar.Toggle  id='toggle' />
+            <Navbar.Toggle id="toggle" />
+            
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
                 <Nav.Link href="">
@@ -31,23 +32,17 @@ export default function Navv() {
                     <h5>AboutUs</h5>
                   </Link>
                 </Nav.Link>
-                <div className="leftNav d-flex">
-                  <Nav.Link href="/Contact">
-                    <Link to="/Contact">
-                      <h5>Contact</h5>
-                    </Link>
-                  </Nav.Link>
-                  <Nav.Link href="/favorit">
-                    <Link to="/favorit">
-                      <h5>Favorits</h5>
-                    </Link>
-                  </Nav.Link>
-                </div>
+                <Nav.Link href="/Contact">
+                  <Link to="/Contact">
+                    <h5>Contact</h5>
+                  </Link>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </nav>
+     
     </div>
   );
 }

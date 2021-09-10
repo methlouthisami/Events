@@ -2,17 +2,16 @@ const EVENT = require("../model/eventModel");
 const mongoose = require("mongoose");
 const axios = require("axios");
 const fs = require("fs");
-
 module.exports = {
   addEvent: async (req, res) => {
+   // const image = `/images/${filename}`;
+
     const userId = mongoose.Types.ObjectId(req.body.userId);
-     // const image = `/images/${filename}`;
     const {
-      body: { title, date, description, catégorie,image },
-      
+      body: { title, date, description, catégorie ,image},
+     //filename = { filename },
     } = req;  
-  
-  
+
     try {
       const event = new EVENT({
         userId,
